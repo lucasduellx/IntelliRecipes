@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IntelliRecipes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+        <h1>Faça seu cadastro</h1>
+        
+        <!--criamos um container que vai exibir as mensagens de alerta-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <!--condição para as mensagens-->
+                <ul id="messages" class="list-unstyled">
+                    <!--criamos um laço de repetição para essas mensagens de alerta-->
+                {% for message in messages %}
+                    <li class="alert alert-danger">{{ message }}</li>
+                    <!--chamada da mensagem-->
+                {% endfor %}
+                <!--fim do for-->
+                </ul>
+            {% endif %}
+            <!--fim do if-->
+        {% endwith %}
+
+        {% if user %}
+        <form method="POST" action="{{ url_for('alteruser') }}">
+            <p><label>Usuario:</label> <input class="form-control" type="text" name="username" value='{{ user.username }}' readonly></p>
+            <p><label>Pergunta:</label> <input class="form-control" type="text" name="question" value='{{ user.question }}' readonly></p>
+            <p><label>Resposta:</label> <input class="form-control" type="text" name="answer" required></p>
+            <p><label>Senha:</label> <input class="form-control" type="password" name="password" required></p>
+            <p><button class="btn btn-primary" type="submit">Alterar</button></p>
+        </form>
+        {% else %}
+        <form method="POST" action="{{ url_for('recoveruser') }}">
+            <p><label>Usuario:</label> <input class="form-control" type="text" name="username" required></p>
+            <p><button class="btn btn-primary" type="submit">Verificar</button></p>
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>
