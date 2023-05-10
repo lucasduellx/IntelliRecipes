@@ -1,5 +1,5 @@
 from flask import request, jsonify, render_template, redirect, session, flash, url_for
-from app import app
+from App import app
 from ..views import users,helper
 
 
