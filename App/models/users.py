@@ -1,4 +1,4 @@
-from App import db,ma
+from app import db,ma
 
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

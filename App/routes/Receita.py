@@ -1,5 +1,16 @@
-from flask import request, jsonify
-from App import app
+from flask import request, jsonify, render_template, redirect, session, flash, url_for
+from app import app
+from ..views import users,helper
+
+
+# Rotas de INTERFACE
+
+@app.route('/receitas', methods=['GET'])
+@helper.token_required
+def getrecipes(current_user):
+    return render_template('receitas.html')
+
+# Rotas de API
 
 @app.route('/', methods=['GET'])
 def recipes():

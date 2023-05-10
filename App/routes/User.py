@@ -1,5 +1,5 @@
 from flask import request, jsonify, render_template, redirect, session, flash, url_for
-from App import app
+from app import app
 from ..views import users,helper
 
 # ROTAS API

@@ -1,4 +1,4 @@
-from App import app
+from app import app
 import jwt
 from werkzeug.security import check_password_hash
 from flask import request,jsonify,session,url_for,redirect,flash

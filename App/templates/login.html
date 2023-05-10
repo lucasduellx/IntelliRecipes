@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
-    <div class="container">
-        <h1>Faça seu login</h1>
-        
+    <div class="header">
+
+    </div>
+    <div class="content container">
+        <h2>Bem vindo ao IntelliRecipes</h2>        
         <!--criamos um container que vai exibir as mensagens de alerta-->
         {% with messages = get_flashed_messages(category_filter=["error"]) %}
             {% if messages %}
@@ -44,6 +46,12 @@
             <p><label>Senha:</label> <input class="form-control" type="password" name="password" required></p>
             <p><button class="btn btn-primary" type="submit">Entrar</button></p>
         </form>
+        <form method="POST" action="{{ url_for('register') }}">
+            <p><button class="btn btn-info" style="justify-content: center;" type="submit">Registrar</button></p>
+        </form>
+    </div>
+    <div class="footer">
+
     </div>
 </body>
 </html>

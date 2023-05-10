@@ -16,7 +16,7 @@
     <div class="main">
       <div class="header">
         <form method="GET" action="{{ url_for('logout') }}">
-          <p><button class="btn btn-primary" type="submit">Sair</button></p>
+          <p><button class="btn btn-primary" type="submit"><img class="logout" src="static/images/logout.png" alt="Logout"></button></p>
         </form>
         <!--cria container onde as mensagens serão exibidas-->
         {% with messages = get_flashed_messages() %}
@@ -39,7 +39,7 @@
 
       <div class="footer">
         <form method="GET" action="{{ url_for('logout') }}">
-          <p><button class="btn btn-primary" type="submit">Nova Dieta</button></p>
+          <p><button class="btn btn-info" type="submit"><img class="image" src="static/images/new-page.png" alt="Logout"></button></p>
         </form>
       </div>
     </div>

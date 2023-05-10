@@ -1,5 +1,5 @@
 from flask import request, jsonify
-from App import app
+from app import app
 
 @app.route('/ingrediente', methods=['GET', 'POST'])
 def ingrediente():

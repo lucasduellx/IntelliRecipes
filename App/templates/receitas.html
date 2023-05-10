@@ -1,15 +1,12 @@
 {% extends "template.html" %}
 {% block conteudo %}
-    <div class="menu" onclick="test_func()">
-        <h3>Cafe da Manha</h3>
-    </div>
-    <div class="menu">
-        <h3>Almoço</h3>
-    </div>
-    <div class="menu">
-        <h3>Lanche</h3>
-    </div>
-    <div class="menu">
-        <h3>Janta</h3>
+    <div class="container-recipe">
+        <div>
+            <img class="receita-img" src="static/images/overnight.png" alt="">
+        </div>
+        <div class="receita-info">
+            <p>Overnight oats energético</p> 
+            <p><img class="receita-clock" src="static/images/clock.png" alt=""> 5 minutos</p> 
+        </div>
     </div>
 {% endblock %}
