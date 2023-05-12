@@ -1,12 +1,14 @@
 {% extends "template.html" %}
 {% block conteudo %}
-    <div class="container-recipe">
-        <div>
-            <img class="receita-img" src="static/images/overnight.png" alt="">
+    {% for recipe in recipes %}
+        <div class="container-recipe">
+            <div>
+                <img class="receita-img" src={{recipe.Image}} alt="">
+            </div>
+            <div class="receita-info">
+                <p>{{recipe.Nome}}</p> 
+                <p><img class="receita-clock" src="static/images/clock.png" alt=""> {{recipe.Tempo}}</p> 
+            </div>
         </div>
-        <div class="receita-info">
-            <p>Overnight oats energético</p> 
-            <p><img class="receita-clock" src="static/images/clock.png" alt=""> 5 minutos</p> 
-        </div>
-    </div>
+    {% endfor %}
 {% endblock %}

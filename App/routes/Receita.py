@@ -8,7 +8,15 @@ from ..views import users,helper
 @app.route('/receitas', methods=['GET'])
 @helper.token_required
 def getrecipes(current_user):
-    return render_template('receitas.html')
+    recipes = [
+            {
+                "Nome" : "Overnight oats energético",
+                "Rendimento":  "20 porções",
+                "Tempo": "5 minutos",
+                "Image": "static/images/overnight.png"
+            }
+        ]
+    return render_template('receitas.html',recipes=recipes,back=True)
 
 # Rotas de API
 

@@ -6757,8 +6757,9 @@ html {
     width: 100vw;
     height: 3em;
     display: flex;
-    justify-content:flex-end;
+    justify-content:center;
     align-items: center;
+    gap: 100px;
   }
 
   .content {
@@ -6830,6 +6831,7 @@ html {
     border: 5px solid black;
     border-radius: 5px;
     gap: 5px;
+    background-color: greenyellow;
   }
 
   .receita-img{
@@ -6850,4 +6852,13 @@ html {
     justify-content: space-around;
     align-items:center;
     gap: 30px;
+  }
+
+  p{
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }

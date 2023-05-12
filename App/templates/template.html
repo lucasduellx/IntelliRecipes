@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IntelliRecipes</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <!-- <script type="text/javascript" src="{{ url_for('static', filename='receitas.js') }}"></script> -->
-    <script type="text/javascript">
-      function test_func() {
-          console.log('teste');
-      }
-  </script>
   </head>
   <body>
     <div class="main">
       <div class="header">
+        {% if back %}
+        <form method="GET" action="{{ url_for('home') }}">
+          <p><button class="btn btn-primary" type="submit"><img class="image" src="static/images/back.png" alt="Home"></button></p>
+        </form>
+        {% endif %}
         <form method="GET" action="{{ url_for('logout') }}">
           <p><button class="btn btn-primary" type="submit"><img class="logout" src="static/images/logout.png" alt="Logout"></button></p>
         </form>

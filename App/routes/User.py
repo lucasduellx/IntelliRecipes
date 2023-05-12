@@ -74,7 +74,11 @@ def home(current_user):
 @helper.token_required
 def logout(current_user):
     session['token'] = None
-    flash('Volte sempre,'+current_user.name,'message')
+    try:
+        flash('Volte sempre,'+current_user.name,'message')
+    except:
+        flash('Volte sempre, Admin','message')
+
     return render_template('login.html')
 
 @app.route('/register',methods=['GET','POST'])
