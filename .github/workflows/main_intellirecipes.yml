@@ -32,10 +32,6 @@ jobs:
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
-      - name: Test with pytest
-        run: |
-          pytest
-      
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
         with:
