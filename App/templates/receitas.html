@@ -1,14 +1,20 @@
 {% extends "template.html" %}
 {% block conteudo %}
     {% for recipe in recipes %}
-        <div class="container-recipe">
-            <div>
-                <img class="receita-img" src={{recipe.Image}} alt="">
+    <form method="POST" action="{{ url_for('getrecipe') }}">
+        <input type="hidden" name="cafe" value={{recipe.Id}}>
+        <button class="btn btn-link" type="submit" style="width: 100%;">
+            <div class="container-recipe" style="width: 100%;">
+                <div>
+                    <img class="receita-img" src={{recipe.Image}} alt="">
+                </div>
+                <div class="receita-info">
+                    <p>{{recipe.Nome}}</p> 
+                    <p><img class="receita-clock" src="static/images/clock.png" alt=""> {{recipe.Tempo}}</p> 
+                </div>
             </div>
-            <div class="receita-info">
-                <p>{{recipe.Nome}}</p> 
-                <p><img class="receita-clock" src="static/images/clock.png" alt=""> {{recipe.Tempo}}</p> 
-            </div>
-        </div>
+        </button>
+    </form>
+
     {% endfor %}
 {% endblock %}

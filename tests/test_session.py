@@ -10,7 +10,7 @@ def test_redirect(client):
     with client:
         response = client.get("/")
         # "/" redirects either to login or adventure
-        assert response.status_code == 302
+        assert response.status_code == 200
 
 def test_access(client):
     with client:

@@ -1,7 +1,8 @@
 {% extends "template.html" %}
 {% block conteudo %}
     <div class="menu-list">
-        <form method="GET" action="{{ url_for('getrecipes') }}">
+        <form method="POST" action="{{ url_for('getrecipes') }}">
+            <input type="hidden" name="cafe" value="cafe">
             <button class="btn btn-link" type="submit">
                 <div class="menu">
                     <img src="static/images/cafe-da-manha.png" alt=""> Lanche
@@ -9,6 +10,7 @@
             </button>
         </form>
         <form method="POST" action="{{ url_for('getrecipes') }}">
+            <input type="hidden" name="cafe" value="almoco">
             <button class="btn btn-link" type="submit">
                 <div class="menu">
                     <img src="static/images/almoço.png" alt=""> Almoço
@@ -16,6 +18,7 @@
             </button>
         </form>
         <form method="POST" action="{{ url_for('getrecipes') }}">
+            <input type="hidden" name="cafe" value="janta">
             <button class="btn btn-link" type="submit">
                 <div class="menu">
                     <img src="static/images/janta.png" alt=""> Janta
@@ -23,6 +26,7 @@
             </button>
         </form>
         <form method="POST" action="{{ url_for('getrecipes') }}">
+            <input type="hidden" name="cafe" value="extra">
             <button class="btn btn-link" type="submit">
                 <div class="menu">
                     <img src="static/images/lanche.png" alt=""> Extra
