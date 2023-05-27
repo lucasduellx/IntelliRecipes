@@ -61,6 +61,7 @@ def alteruser():
 
 # ROTAS DAS PAGINAS
 
+@app.route('/',methods=['GET','POST'])
 @app.route('/login',methods=['GET','POST'])
 def login():
     return render_template('login.html')

@@ -18,6 +18,8 @@ def auth():
         token = jwt.encode(payload={'username': username, 'exp': datetime.datetime.now() + datetime.timedelta(hours=12)}, 
                            key=app.config['SECRET_KEY'],algorithm="HS256")
         return token
+    else:
+        return None
     user = users.get_user_by_username(username)
     if not user:
         return None
@@ -37,6 +39,9 @@ def auth():
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
+        if not session.get('token'):
+            flash('Token Invalido!')
+            return redirect(url_for('login'))
         token = session['token']
         if not token:
             flash('Token Faltando!')

@@ -9,7 +9,6 @@ def test_access_session(client):
 def test_redirect(client):
     with client:
         response = client.get("/")
-        # "/" redirects either to an API
         assert response.status_code == 200
 
 def test_access(client):

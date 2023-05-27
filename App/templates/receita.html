@@ -1,31 +1,31 @@
 {% extends "template.html" %}
 {% block conteudo %}
     <div class="header-recipe">
-        Nome: Overnight oats energético
-        Tempo de preparo: 5 minutos
+        Nome: {{recipe.Nome}}
+        
     </div>
     <div class="recipe-content">
         Ingredientes:
         <ul>
-            <li>1 xicara de chã de aveia</li>
-            <li>1 xicara de chã de aveia</li>
-            <li>1 xicara de chã de aveia</li>
-            <li>1 xicara de chã de aveia</li>
-            <li>1 xicara de chã de aveia</li>
+            {% for ing in recipe.Ingrediente %}
+            <li>{{ing}}</li>
+            {% endfor %}
         </ul>
 
         Modo de Preparo:
         <ul>
-            <li>1 xicara de chã de aveia</li>
-            <li>1 xicara de chã de aveia</li>
-            <li>1 xicara de chã de aveia</li>
-            <li>1 xicara de chã de aveia</li>
-            <li>1 xicara de chã de aveia</li>
+            {% for mod in recipe.Modo %}
+            <li>{{mod}}</li>
+            {% endfor %}
         </ul>
     </div>
     <div class="recipe-footer">
-        Rendimento: 1 porção
-
-        <p>Dicas: Se quiser diversificar a receita, você também pode substituir metade da medida de café por leite ou servir com iogurte grego. Fica uma delícia.</p> 
+        <p>
+            Rendimento: {{recipe.Rendimento}}
+        </p> 
+        <p>
+            Tempo de preparo: {{recipe.Tempo}}
+        </p>
+        
     </div>
 {% endblock %}
